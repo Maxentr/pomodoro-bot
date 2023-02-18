@@ -142,6 +142,19 @@ class Pomodoro {
           .setLabel("Stop")
           .setStyle(ButtonStyle.Danger),
       );
+    } else if (this.isFinished) {
+      buttons.push(
+        new ButtonBuilder()
+          .setCustomId(`${this._id}__restart`)
+          .setLabel("Recommencer")
+          .setStyle(ButtonStyle.Primary),
+      );
+      buttons.push(
+        new ButtonBuilder()
+          .setCustomId(`${this._id}__stop`)
+          .setLabel("Arrêter")
+          .setStyle(ButtonStyle.Danger),
+      );
     }
 
     return buttons.length > 0 ? new ActionRowBuilder().addComponents(...buttons) : null;
@@ -195,9 +208,8 @@ class Pomodoro {
       embeds: [updatedEmbed],
     };
 
-    if (row) {
-      reply.components = [row];
-    }
+    if (row) reply.components = [row];
+    else reply.components = [];
 
     await this._interaction.editReply(reply);
   }
@@ -268,6 +280,14 @@ class Pomodoro {
     this._status = "stopped";
     this._connection.disconnect();
     await this._interaction.deleteReply();
+  }
+
+  async restart() {
+    this._status = "running";
+    this._currentSession = 1;
+    this._currentTimer = this._workDuration;
+    await this.render();
+    this._timer = this.createInterval();
   }
 
   async end() {

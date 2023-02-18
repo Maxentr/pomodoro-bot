@@ -55,6 +55,8 @@ client.on(Events.InteractionCreate, async (interaction) => {
     pomodoro.stop();
   } else if (buttonState === "cancel") {
     pomodoro.stop();
+  } else if (buttonState === "restart") {
+    pomodoro.restart();
   }
 });
 

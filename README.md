@@ -9,6 +9,7 @@ A simple Discord bot that allows you to use the Pomodoro technique in your Disco
 - Resume a Pomodoro session
 - Stop a Pomodoro session
 - Set a custom Pomodoro session length
+- Restart a Pomodoro session
 
 ## Commands
 
@@ -38,3 +39,7 @@ pnpm install
 ```bash
 pnpm start
 ```
+
+## TODO
+
+- Refactor the code to make it more readable
