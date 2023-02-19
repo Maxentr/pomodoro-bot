@@ -1,15 +1,14 @@
-# Pomodoro Discord Bot
+# Pomodoro Bot
 
 A simple Discord bot that allows you to use the Pomodoro technique in your Discord server.
 
 ## Features
 
-- Start a Pomodoro session
-- Pause a Pomodoro session
-- Resume a Pomodoro session
-- Stop a Pomodoro session
-- Set a custom Pomodoro session length
-- Restart a Pomodoro session
+- Start a Pomodoro session with a specified type and number of sessions
+- Pause the Pomodoro session
+- Resume the Pomodoro session
+- Stop the Pomodoro session
+- Restart the Pomodoro session
 
 ## Commands
 
@@ -42,4 +41,5 @@ pnpm start
 
 ## TODO
 
-- Refactor the code to make it more readable
+- [x] Refactor the code to make it more readable (add TypeScript and prettier)
+- [ ] Lock the pomodoro session to user who started it (or allow all users in the channel to interact with it) ?

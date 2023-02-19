@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./prod",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "commands/*": ["src/commands/*"],
+      "db/*": ["src/db/*"],
+      "config/*": ["src/config/*"],
+      "events/*": ["src/events/*"],
+      "utils/*": ["src/utils/*"],
+      "types/*": ["src/types/*"],
+    }
+  }
+}
